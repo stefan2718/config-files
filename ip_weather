@@ -1,0 +1,11 @@
+#!/bin/sh
+
+### location /etc/cron.hourly
+### https://www.raspberrypi.org/forums/viewtopic.php?t=23440
+
+IP_LOCAL=`/sbin/ifconfig wlan0 | /bin/grep "inet addr" | /usr/bin/cut -d ":" -f 2 | /usr/bin/cut -d " " -f 1`
+IP_NOT=`wget -q -O - http://icanhazip.com/ | tail`
+TEMP=`curl -s "http://rss.accuweather.com/rss/liveweather_rss.asp?metric=1&locCode=m5g" | sed -n '/Currently:/ s/.*: \(.*\): \([0-9]*\)\([CF]\).*/\2°\3, \1/p'`
+
+echo "$TEMP (Toronto)" > /etc/script-results/weather_toronto
+echo $IP_LOCAL and $IP_NOT > /etc/script-results/ip 

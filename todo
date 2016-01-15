@@ -1,0 +1,27 @@
+#!/bin/bash
+
+### location /bin/todo
+
+file=$HOME/.bashrc
+if [ $# -lt 1 ]
+then
+    echo -e "Usage:\t$0 any sort of message you want repeated at login\n\t$0 ?\n\t$0 -done"
+elif [ $1 == "-done" ]
+then
+    greps=`grep "TODO" $file`
+    IFS=$'\n' read -ra todos -d $'\0' <<< "$greps" 
+
+    for i in ${!todos[@]}; do
+        echo "  $i  ${todos[$i]}"
+    done
+    echo "Remove which todo? (number) "
+    
+    read num
+    sed -i "/${todos[$num]}/d" $file
+
+elif [ $1 == "?" ]
+then
+   exec /bin/grep "TODO" $file
+else
+    echo "echo \"TODO: $@\"" >> $file
+fi
