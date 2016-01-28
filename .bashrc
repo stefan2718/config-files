@@ -83,12 +83,9 @@ fi
 
 # Alias definitions.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
-cdr () { cd `ls -dt */ | head -n1`; }
-cdu () { if [ ! -z "$1" ]; then cdup=".." ; for ((i=1; i<$1; i++)); do cdup="../$cdup"; done; echo "cd $cdup"; cd $cdup; else cd .. ; fi;}
+if [ -f $HOME/.bash_aliases ]; then
+    . $HOME/.bash_aliases
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
