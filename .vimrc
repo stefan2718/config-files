@@ -4,17 +4,18 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-commentary'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+set term=ansi
 colorscheme desert
+
 set backspace=2
 set whichwrap+=<,>,h,l
 set cmdheight=2
@@ -47,3 +48,6 @@ set smartindent " be smart forever
 
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
+
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
