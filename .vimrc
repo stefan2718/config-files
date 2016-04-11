@@ -8,13 +8,24 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-commentary'
+Plugin 'digitaltoad/vim-jade'
 Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-set term=ansi
+"set term=ansi
 colorscheme desert
+
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  "setglobal bomb
+  set fileencodings=ucs-bom,utf-8,latin1
+endif
 
 set backspace=2
 set whichwrap+=<,>,h,l
@@ -41,13 +52,15 @@ set number      " line numbers
 set ignorecase  " ignores case in searches, can add \C before term to make case sensitive
 
 set expandtab   " use spaces instead of tab
-set shiftwidth=4
-set tabstop=4   " 1 tab is 4 spaces
+set shiftwidth=2
+set tabstop=2   " 1 tab is 4 spaces
 set autoindent  " copies indent from previous line
 set smartindent " be smart forever
 
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
 
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>

@@ -4,6 +4,7 @@ function wifiscan() {
 }
 alias resetwifi="sudo ifdown wlan0; sudo ifup wlan0"
 alias pss="ps -ef | grep '^pi'"
+alias vim="vim -p"
 
 alias ll='ls -l'
 alias la='ls -A'
