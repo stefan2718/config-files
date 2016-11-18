@@ -60,7 +60,4 @@ set smartindent " be smart forever
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
 
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+:imap ;; <Esc>
