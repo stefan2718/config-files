@@ -8,8 +8,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-commentary'
-Plugin 'digitaltoad/vim-jade'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'alvan/vim-closetag'
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -59,5 +60,14 @@ set smartindent " be smart forever
 
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
+set wildmenu
+set wildmode=longest,list
+set wildignore+=*.a,*.o
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+set wildignore+=.DS_Store,.git,.hg,.svn
+set wildignore+=*~,*.swp,*.tmp
+
+" For vim-closetag
+let g:closetag_filenames = "*.html,*.xhtml,*.xml"
 
 :imap ;; <Esc>
