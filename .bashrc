@@ -53,8 +53,13 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+source ~/.git-completion.bash
+alias __git_ps1='git symbolic-ref --short HEAD 2>/dev/null'
+
+
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$\[\033[00m\] '
+    export PS1='\[\033[01;32m\]\A\[\033[00m\] \[\033[01;34m\]\w \[\033[36m\]`__git_ps1`\[\033[0m\]\n\$\[\033[00m\] '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
