@@ -1,0 +1,19 @@
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[user]
+	name = Stefan Battiston
+	email = stefan.battiston@gmail.com
+	signingkey = 18EEDECF7B946B6F
+[color]
+	ui = always
+[core]
+	pager = less -+XF
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[url "git@github.com:turnercode"]
+    insteadOf = https://github.com/turnercode

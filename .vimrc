@@ -49,7 +49,7 @@ set statusline+=\ \ %P  " percent through file
 set incsearch   " incremental search (like google)
 set hlsearch    " highlights all occurences (type :noh to unhighlight)
 set showmatch   " shows matching brackets
-set number      " line numbers
+set relativenumber      " line numbers
 set ignorecase  " ignores case in searches, can add \C before term to make case sensitive
 
 set expandtab   " use spaces instead of tab
