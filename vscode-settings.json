@@ -1,0 +1,67 @@
+{
+    "go.formatTool": "goimports",
+    "go.autocompleteUnimportedPackages": true,
+    "go.useLanguageServer": true,
+    "go.languageServerExperimentalFeatures": {
+        "format": false
+    },
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [";", ";"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.statusBarColorControl": true,
+    "editor.lineNumbers": "relative",
+    "editor.cursorSurroundingLines": 4,
+    "editor.tabSize": 2,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    },
+    "window.zoomLevel": 0,
+    "rust.clippy_preference": "on",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "terminal.integrated.allowChords": false,
+    "[go]": {
+        "editor.defaultFormatter": "golang.go"
+    },
+    "editor.minimap.enabled": false,
+    "cSpell.enabledLanguageIds": [
+        "markdown",
+        "plaintext"
+    ],
+    "cSpell.userWords": [
+        "clusterer",
+        "encryptor",
+        "idempotency",
+        "wasm",
+        "webassembly"
+    ],
+    "terraform.languageServer": {
+        "external": true,
+        "args": [
+            "serve"
+        ]
+    },
+    "cSpell.ignorePaths": [
+        "**/package-lock.json",
+        "**/node_modules/**",
+        "**/vscode-extension/**",
+        "**/.git/objects/**",
+        ".vscode",
+        "cargo.lock",
+        "Cargo.lock"
+    ],
+    "extensions.ignoreRecommendations": false,
+    "window.autoDetectColorScheme": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "java.project.importOnFirstTimeStartup": "automatic",
+}
