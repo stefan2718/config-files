@@ -35,16 +35,24 @@ fi
 
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
+# don't re-execute these once inside a nested bash session in tmux
+if [ -z "$TMUX" ]; then
+
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+
+  export PATH="$HOME/.cargo/bin:$PATH"
+  export GPG_TTY=$(tty)
+  export BASH_SILENCE_DEPRECATION_WARNING=1
+  export DOTNET_CLI_TELEMETRY_OPTOUT=1
+  export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+  export AWS_PROFILE=fa_dev
+fi
+
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
  . $(brew --prefix)/etc/bash_completion
 fi
-
-
-export PATH="$HOME/.cargo/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Setting PATH for Python 3.7
-export PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/sbattiston/Library/Python/3.7/bin:${PATH}"

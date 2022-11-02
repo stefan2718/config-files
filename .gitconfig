@@ -1,19 +1,22 @@
+# This is Git's per-user configuration file.
 [alias]
 	co = checkout
 	ci = commit
 	st = status
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-[user]
-	name = Stefan Battiston
-	email = stefan.battiston@gmail.com
-	signingkey = 18EEDECF7B946B6F
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  br = branch --sort=-committerdate
 [color]
-	ui = always
+  ui = always
 [core]
-	pager = less -+XF
+  pager = less -+XF
 [commit]
-	gpgsign = true
+  gpgsign = true
 [tag]
-	gpgsign = true
-[url "git@github.com:turnercode"]
-    insteadOf = https://github.com/turnercode
+  gpgsign = true
+[pull]
+	rebase = true
+[push]
+	default = simple
+	autoSetupRemote = true
+[init]
+	defaultBranch = main

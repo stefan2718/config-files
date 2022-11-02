@@ -1,45 +1,16 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'alvan/vim-closetag'
-Plugin 'leafgarland/typescript-vim'
+Plug 'tpope/vim-commentary'
+Plug 'alvan/vim-closetag'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
 
 "set term=ansi
 colorscheme desert
 
-if has("multi_byte")
-  if &termencoding == ""
-    let &termencoding = &encoding
-  endif
-  set encoding=utf-8
-  setglobal fileencoding=utf-8
-  "setglobal bomb
-  set fileencodings=ucs-bom,utf-8,latin1
-endif
-
-set backspace=2
-set whichwrap+=<,>,h,l
-set cmdheight=2
-syntax enable
-
-" sets text white, background cyan
-hi User1 ctermbg=white ctermfg=black
-
-set laststatus=2        " adds the status bar
-set statusline=%1*      " set colour to User1
-set statusline+=%<%F    " full path
-set statusline+=\ %m    " modified flag
 set statusline+=%=      " right align
 set statusline+=%5l     " current line
 set statusline+=/%L     " total lines
@@ -58,6 +29,7 @@ set tabstop=2   " 1 tab is 4 spaces
 set autoindent  " copies indent from previous line
 set smartindent " be smart forever
 
+set backspace=indent,eol,start
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
 set wildmenu
